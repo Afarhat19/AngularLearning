@@ -1,2 +1,40 @@
-<button class="btn btn-primary" [disabled]= "!allowNewServer" > Add Server</button>
-<app-server></app-server> 
+<label>Server Name</label>
+<input 
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
+<button 
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">Add Server</button>
+    <p *ngIf="serverCreated">Server was created, server name is {{serverName}}</p>
+    
+
+    <app-server></app-server>
+    <app-server></app-server>
+   
+
+
+
+
+
+
+
+<!-- <button class="btn btn-primary"
+ [disabled]= "!allowNewServer" 
+ (click)="onCreateServer()"> Add Server</button>
+ <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{serverCreationStatus}}</p> -->
+
+<!-- This is one way data binding -->
+<!-- <label>Server Name</label>
+<input type="text" class="form-control" 
+(input)="onUpdateServerName($event)"> -->
+
+<!-- two way databinding -->
+<!-- 
+<label>Server Name</label>
+<input type="text" class="form-control" 
+[(ngModel)]= "serverName">
+
+<p>{{serverName}}</p> --> 
